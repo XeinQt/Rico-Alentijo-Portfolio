@@ -1,71 +1,9 @@
-(function () {
-  const featuredGrid = document.getElementById("projects-grid");
-  const mobileMenu = document.querySelector(".mobile-menu");
-
-  function renderFeaturedProjects() {
-    if (!featuredGrid) return;
-    featuredGrid.innerHTML = "";
-    PROJECTS.slice(0, 3).forEach((project, index) => {
-      featuredGrid.appendChild(createShowcaseCard(project, index + 1));
-    });
-  }
-
-  function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-    if (mobileMenu) mobileMenu.classList.remove("open");
-  }
-
-  function setupNav() {
-    document.querySelectorAll("[data-nav]").forEach((link) => {
-      link.addEventListener("click", (e) => {
-        e.preventDefault();
-        scrollToSection(link.dataset.nav);
-      });
-    });
-
-    const sections = ["work", "about", "process", "contact"];
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            document.querySelectorAll("[data-nav]").forEach((link) => {
-              link.classList.toggle(
-                "active",
-                link.dataset.nav === entry.target.id,
-              );
-            });
-          }
-        });
-      },
-      { rootMargin: "-40% 0px -50% 0px", threshold: 0 },
-    );
-
-    sections.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-  }
-
-  function setupHero() {
-    document.getElementById("view-work-btn")?.addEventListener("click", () => {
-      scrollToSection("work");
-    });
-  }
-
-  renderFeaturedProjects();
-  setupNav();
-  setupMobileMenu();
-  setupHero();
-})();
-
 // main.js - Homepage wiring
-// Renders the Selected Projects grid and sets up basic page interactions.
+// Renders the Selected Projects grid and sets up page interactions.
 
 document.addEventListener("DOMContentLoaded", () => {
   setupMobileMenu();
+  setupMobileMenuCloseOnLinkClick();
   renderProjectsGrid();
   setupViewWorkButton();
   setupNavActiveState();
@@ -76,9 +14,24 @@ function renderProjectsGrid() {
   if (!grid || typeof PROJECTS === "undefined") return;
 
   grid.innerHTML = "";
-  PROJECTS.forEach((project, i) => {
-    const card = createShowcaseCard(project, i + 1);
+  // Render projects using the premium project card design
+  PROJECTS.forEach((project) => {
+    // If the project is featured, we can render it as featured or regular.
+    // The user's design shows a standard project card layout (featured: false).
+    const card = createProjectCard(project, { featured: false });
     grid.appendChild(card);
+  });
+}
+
+function setupMobileMenuCloseOnLinkClick() {
+  const mobileMenu = document.querySelector(".mobile-menu");
+  if (!mobileMenu) return;
+
+  const links = mobileMenu.querySelectorAll("a");
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.remove("open");
+    });
   });
 }
 
@@ -95,7 +48,13 @@ function setupViewWorkButton() {
 function setupNavActiveState() {
   const navLinks = document.querySelectorAll(".nav-links a, .mobile-menu a");
   const sections = Array.from(navLinks)
-    .map((link) => document.querySelector(link.getAttribute("href")))
+    .map((link) => {
+      const href = link.getAttribute("href");
+      if (href && href.startsWith("#")) {
+        return document.querySelector(href);
+      }
+      return null;
+    })
     .filter(Boolean);
 
   if (!sections.length) return;
@@ -106,7 +65,8 @@ function setupNavActiveState() {
         if (entry.isIntersecting) {
           const id = entry.target.id;
           navLinks.forEach((link) => {
-            link.classList.toggle("active", link.dataset.nav === id);
+            const href = link.getAttribute("href");
+            link.classList.toggle("active", href === `#${id}` || link.dataset.nav === id);
           });
         }
       });

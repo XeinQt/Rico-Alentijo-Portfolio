@@ -191,7 +191,7 @@ nav {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(260px, 32vw) 1fr auto;
+  grid-template-columns: minmax(240px, 28vw) 1fr auto;
   gap: clamp(2rem, 4vw, 4rem);
   align-items: center;
   width: 100%;
@@ -208,19 +208,47 @@ nav {
 
 .hero-portrait {
   position: relative;
-  width: min(45vw, 600px);
+  width: min(32vw, 380px);
   height: auto;
-  border-radius: 4px;
-  overflow: visible;
+  aspect-ratio: 3 / 4;
+  border-radius: 12px;
+  overflow: hidden;
   box-shadow: 0 24px 80px var(--shadow-lg);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 2;
+}
+
+.hero-portrait::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: var(--bg-accent-soft);
+  border-radius: 12px;
+  transform: translate(14px, 14px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-portrait:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 32px 100px rgba(44, 36, 32, 0.15);
+}
+
+.hero-portrait:hover::after {
+  transform: translate(8px, 8px);
 }
 
 .hero-portrait-img {
   width: 100%;
-  height: auto;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
   object-position: center top;
   display: block;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-portrait:hover .hero-portrait-img {
+  transform: scale(1.04);
 }
 
 .hero-portrait-img.hidden {
@@ -1587,8 +1615,8 @@ body.modal-open {
   }
 
   .hero-portrait {
-    width: min(32vw, 300px);
-    height: min(65vh, 480px);
+    width: min(38vw, 360px);
+    height: auto;
   }
 
   .info-grid {
@@ -1689,8 +1717,8 @@ body.modal-open {
   }
 
   .hero-portrait {
-    width: min(70vw, 280px);
-    height: min(50vh, 380px);
+    width: min(75vw, 320px);
+    height: auto;
   }
 
   .hero-bio {
