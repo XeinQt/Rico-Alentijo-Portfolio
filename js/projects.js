@@ -80,7 +80,8 @@ const PROJECTS = [
       "Conducted design walkthroughs with stakeholders to validate flows and refine the user experience",
     ],
     techStack: ["Figma"],
-    figmaUrl: "#",
+    figmaUrl:
+      "https://www.figma.com/design/RpRTps7Wz9yCFKR0ep59uy/Library-Management-System?node-id=0-1&t=lRgLq1p43tjDp5Tq-1",
     galleryImages: [
       "img/baranngay/baranggay-1.png",
       "img/baranngay/baranggay-2.png",
