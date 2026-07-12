@@ -126,7 +126,8 @@ const PROJECTS = [
       "Prototyped interactive flows in Figma for client review and usability walkthroughs",
     ],
     techStack: ["Figma"],
-    figmaUrl: "https://www.figma.com/design/eo6TnccTbwsf6lyh8rmYdp/My-Works?node-id=2030-134463&t=TTMGGU8YUNyzrnlM-1",
+    figmaUrl:
+      "https://www.figma.com/design/eo6TnccTbwsf6lyh8rmYdp/My-Works?node-id=2030-134463&t=TTMGGU8YUNyzrnlM-1",
     galleryImages: [],
     mobileGalleryImages: [
       "img/champion/mobile-1.png",
@@ -183,7 +184,8 @@ const PROJECTS = [
       "Developed high-fidelity prototypes to simulate sharing, contact saves, and card previews",
     ],
     techStack: ["Figma"],
-    figmaUrl: "https://www.figma.com/design/eo6TnccTbwsf6lyh8rmYdp/My-Works?node-id=2030-134463&t=TTMGGU8YUNyzrnlM-1",
+    figmaUrl:
+      "https://www.figma.com/design/eo6TnccTbwsf6lyh8rmYdp/My-Works?node-id=2030-134463&t=TTMGGU8YUNyzrnlM-1",
     galleryImages: [],
     mobileGalleryImages: [
       "img/bizcard/mobile-1.png",
@@ -240,8 +242,8 @@ const PROJECTS = [
       "A Figma-designed EMR (Electronic Medical Records) platform for healthcare providers — streamlining patient management, clinical workflows, and data-driven insights.",
     linkText: "View project →",
     year: "2025",
-    role: "UI/UX Designer",
-    client: "KamAI",
+    role: "Assistant UI/UX Designer",
+    client: "Dr. Magdalena Tollea",
     overview:
       "KamAI is a comprehensive Figma UI/UX design for an Electronic Medical Records (EMR) web platform aimed at modern healthcare providers. The platform enables clinicians to manage patients, track lab results, handle billing, manage care plans, and access real-time analytics — all from a clean, professional dashboard interface. The design balances the complexity of clinical workflows with an accessible, intuitive user experience built for both administrators and healthcare staff.",
     responsibilities: [
@@ -256,7 +258,8 @@ const PROJECTS = [
       "Built reusable Figma components: sidebar navigation, data cards, tables, charts, and form inputs",
     ],
     techStack: ["Figma"],
-    figmaUrl: "https://www.figma.com/design/eo6TnccTbwsf6lyh8rmYdp/My-Works?node-id=2030-134463&t=TTMGGU8YUNyzrnlM-1",
+    figmaUrl:
+      "https://www.figma.com/design/eo6TnccTbwsf6lyh8rmYdp/My-Works?node-id=2030-134463&t=TTMGGU8YUNyzrnlM-1",
     galleryImages: [
       "img/KamAi/desktop0.png",
       "img/KamAi/desktop-1.png",
