@@ -14,10 +14,10 @@ function renderProjectsGrid() {
   if (!grid || typeof PROJECTS === "undefined") return;
 
   grid.innerHTML = "";
-  // Render projects using the premium project card design
-  PROJECTS.forEach((project) => {
-    // If the project is featured, we can render it as featured or regular.
-    // The user's design shows a standard project card layout (featured: false).
+  // Show only the first 6 projects on the homepage.
+  // The "View all projects →" link navigates to projects.html for the full list.
+  const visibleProjects = PROJECTS.slice(0, 6);
+  visibleProjects.forEach((project) => {
     const card = createProjectCard(project, { featured: false });
     grid.appendChild(card);
   });
