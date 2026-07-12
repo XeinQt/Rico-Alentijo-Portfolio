@@ -178,11 +178,13 @@ function renderProjectDetail(project, container) {
       </div>
       <div class="detail-actions">
         ${
-          project.figmaUrl && project.figmaUrl !== "#"
-            ? `<a href="${project.figmaUrl}" class="btn-primary" target="_blank" rel="noopener">View in Figma →</a>`
-            : project.githubUrl && project.githubUrl !== "#"
-              ? `<a href="${project.githubUrl}" class="btn-primary" target="_blank" rel="noopener">View on GitHub →</a>`
-              : ""
+          project.liveUrl
+            ? `<a href="${project.liveUrl}" class="btn-primary" target="_blank" rel="noopener">View Live Site →</a>`
+            : project.figmaUrl && project.figmaUrl !== "#"
+              ? `<a href="${project.figmaUrl}" class="btn-primary" target="_blank" rel="noopener">View in Figma →</a>`
+              : project.githubUrl && project.githubUrl !== "#"
+                ? `<a href="${project.githubUrl}" class="btn-primary" target="_blank" rel="noopener">View on GitHub →</a>`
+                : ""
         }
         <a href="projects.html" class="btn-ghost">← All projects</a>
       </div>
