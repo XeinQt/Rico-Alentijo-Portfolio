@@ -5,8 +5,8 @@
   function renderFeaturedProjects() {
     if (!featuredGrid) return;
     featuredGrid.innerHTML = '';
-    PROJECTS.slice(0, 4).forEach((project, index) => {
-      featuredGrid.appendChild(createProjectCard(project, { featured: index === 0 }));
+    PROJECTS.slice(0, 3).forEach((project, index) => {
+      featuredGrid.appendChild(createShowcaseCard(project, index + 1));
     });
   }
 
@@ -26,7 +26,7 @@
       });
     });
 
-    const sections = ['work', 'experience', 'skills', 'contact'];
+    const sections = ['work', 'about', 'process', 'contact'];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

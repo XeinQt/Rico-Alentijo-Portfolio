@@ -1,368 +1,448 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rico Alentijo — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=DM+Sans:opsz,wght@9..40,300;400;500;600&family=Great+Vibes&family=Syne:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>dev.portfolio</title>
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
+  <body>
+    <div class="pf">
+      <nav>
+        <a href="#hero" class="nav-logo" data-nav="hero">Rico<span>.</span></a>
+        <div class="nav-links">
+          <a href="#work" data-nav="work">Projects</a>
+          <a href="#about" data-nav="about">About</a>
+          <a href="#experience" data-nav="experience">Experience</a>
+          <a href="#contact" data-nav="contact">Contact</a>
+        </div>
+        <button class="nav-cta">Resume ↓</button>
+        <button class="nav-hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
 
-<body>
-  <div class="pf">
-    <nav>
-      <a href="#hero" class="nav-logo" data-nav="hero" style="text-decoration:none;">dev<span>.</span>portfolio</a>
-      <div class="nav-links">
-        <a href="#work" data-nav="work">Work</a>
+      <div class="mobile-menu">
+        <a href="#work" data-nav="work">Projects</a>
+        <a href="#about" data-nav="about">About</a>
         <a href="#experience" data-nav="experience">Experience</a>
-        <a href="#skills" data-nav="skills">Skills</a>
         <a href="#contact" data-nav="contact">Contact</a>
+        <button class="nav-cta">Resume ↓</button>
       </div>
-      <button class="nav-cta">Resume ↓</button>
-      <button class="nav-hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </nav>
 
-    <div class="mobile-menu">
-      <a href="#work" data-nav="work">Work</a>
-      <a href="#experience" data-nav="experience">Experience</a>
-      <a href="#skills" data-nav="skills">Skills</a>
-      <a href="#contact" data-nav="contact">Contact</a>
-      <button class="nav-cta">Resume ↓</button>
+      <!-- HERO -->
+      <section class="hero" id="hero">
+        <div class="hero-bg-text" aria-hidden="true">PORTFOLIO</div>
+        <div class="hero-inner">
+          <div class="hero-portrait-col">
+            <div class="hero-portrait">
+              <img
+                src="img/profile.jpg"
+                alt="Rico Alentijo"
+                class="hero-portrait-img"
+                onerror="
+                  this.classList.add('hidden');
+                  this.parentElement.classList.add('no-photo');
+                "
+              />
+              <div class="portrait-fallback">
+                <span class="portrait-initials">RA</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-text-col">
+            <p class="hero-script">Hello, I'm</p>
+            <h1 class="hero-name">RICO<br />ALENTIJO</h1>
+            <p class="hero-role">Full-Stack Developer &amp; UI/UX Creator</p>
+            <p class="hero-bio">
+              I design and build fast, accessible web apps — from pixel-perfect
+              interfaces to scalable backends. Crafting digital products people
+              actually love to use.
+            </p>
+            <div class="hero-actions">
+              <button class="btn-primary" id="view-work-btn">
+                View my work
+              </button>
+              <a
+                href="https://github.com/ricoalentijo"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-ghost"
+              >
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+                  />
+                </svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-stats-col">
+            <div class="hero-stat">
+              <div class="hero-stat-num">2<span>+</span></div>
+              <div class="hero-stat-label">Years Experience</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-num">32<span>+</span></div>
+              <div class="hero-stat-label">Projects Shipped</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-num">18<span>+</span></div>
+              <div class="hero-stat-label">Happy Clients</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SELECTED PROJECTS -->
+      <section class="section projects-showcase" id="work">
+        <div class="section-header">
+          <h2 class="section-title">Selected Projects</h2>
+          <a href="projects.html" class="view-all-link">View all projects →</a>
+        </div>
+        <div class="showcase-grid" id="projects-grid"></div>
+      </section>
+
+      <!-- THREE-COLUMN INFO GRID -->
+      <section class="info-grid" id="about">
+        <div class="info-col education-col">
+          <h3 class="info-heading">Education</h3>
+          <div class="edu-item">
+            <div class="edu-degree">B.S. Information Technology</div>
+            <div class="edu-school">Davao Oriental State University</div>
+            <div class="edu-date">2021 — 2025</div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-degree">Web Development Certification</div>
+            <div class="edu-school">Online Professional Course</div>
+            <div class="edu-date">2023</div>
+          </div>
+
+          <h3 class="info-heading skills-heading">Skills</h3>
+          <div class="skill-badges">
+            <span class="skill-badge">React</span>
+            <span class="skill-badge">Next.js</span>
+            <span class="skill-badge">TypeScript</span>
+            <span class="skill-badge">Node.js</span>
+            <span class="skill-badge">Laravel</span>
+            <span class="skill-badge">Flutter</span>
+            <span class="skill-badge">Tailwind CSS</span>
+            <span class="skill-badge">Firebase</span>
+            <span class="skill-badge">MySql</span>
+            <span class="skill-badge">Figma</span>
+            <span class="skill-badge">Git</span>
+          </div>
+        </div>
+
+        <div class="info-col process-col" id="process">
+          <h3 class="info-heading">Work Process</h3>
+          <div class="process-steps">
+            <div class="process-step">
+              <div class="step-icon">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.3-4.3" />
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-num">01</div>
+                <div class="step-title">Discover</div>
+                <p class="step-desc">
+                  Understanding your goals, audience, and requirements through
+                  research and conversation.
+                </p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-icon">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"
+                  />
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-num">02</div>
+                <div class="step-title">Ideate</div>
+                <p class="step-desc">
+                  Brainstorming concepts, wireframes, and creative directions
+                  that align with your vision.
+                </p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-icon">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"
+                  />
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-num">03</div>
+                <div class="step-title">Design</div>
+                <p class="step-desc">
+                  Crafting polished UI mockups with attention to typography,
+                  color, and user flow.
+                </p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-icon">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-num">04</div>
+                <div class="step-title">Develop</div>
+                <p class="step-desc">
+                  Building responsive, performant applications with clean,
+                  maintainable code.
+                </p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-icon">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+              </div>
+              <div class="step-content">
+                <div class="step-num">05</div>
+                <div class="step-title">Deliver</div>
+                <p class="step-desc">
+                  Testing, launching, and iterating to ensure everything works
+                  flawlessly.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-col quote-col">
+          <div class="quote-box">
+            <div class="quote-mark">"</div>
+            <p class="quote-text">
+              Good design is not just what it looks like — it's how it works.
+              Every line of code and every pixel should serve a purpose.
+            </p>
+            <div class="quote-signature">Rico Alentijo</div>
+            <p class="quote-cta">Let's create something amazing together.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE (condensed) -->
+      <section class="section experience-section" id="experience">
+        <h2 class="section-title">Work Experience</h2>
+        <div class="experience-cards">
+          <div class="exp-card">
+            <div class="exp-date">Jan 2024 — Present</div>
+            <div class="exp-role">Senior Full-Stack Developer</div>
+            <div class="exp-company">Freelance / Independent</div>
+            <p class="exp-desc">
+              Delivering end-to-end web products for startups across Southeast
+              Asia and the US.
+            </p>
+          </div>
+          <div class="exp-card">
+            <div class="exp-date">Apr - June 2026</div>
+            <div class="exp-role">Virtual Assistant Lead Gen</div>
+            <div class="exp-company"></div>
+            <p class="exp-desc">
+              Delivering end-to-end web products for startups across Southeast
+              Asia and the US.
+            </p>
+          </div>
+          <div class="exp-card">
+            <div class="exp-date">Feb — July 2025</div>
+            <div class="exp-role">Assistant UI/UX Designer</div>
+            <div class="exp-company">Stackify Digital Solutions</div>
+            <p class="exp-desc">
+              Led frontend architecture and mentored junior developers on a
+              growing engineering team.
+            </p>
+          </div>
+          <div class="exp-card">
+            <div class="exp-date">August — Dec 2024</div>
+            <div class="exp-role">Freelance UI/UX Designer</div>
+            <div class="exp-company">Independent / Freelance</div>
+            <p class="exp-desc">
+              Designed user-friendly UI/UX prototypes in Figma for clients,
+              creating responsive web and mobile interfaces. Collaborated
+              directly with clients to deliver customized designs that met their
+              business goals and generated income through freelance projects.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER / CONTACT -->
+      <section class="footer-cta" id="contact">
+        <div class="footer-cta-inner">
+          <div class="footer-cta-left">
+            <h2 class="footer-cta-title">Let's Work<br />Together</h2>
+            <p class="footer-cta-desc">
+              I'm currently open to freelance work and full-time roles. Let's
+              build something great.
+            </p>
+            <div class="availability-badge">
+              <div class="avail-dot"></div>
+              Available for freelance
+            </div>
+          </div>
+
+          <div class="footer-cta-center">
+            <a href="mailto:ricoalentijo4@gmail.com" class="contact-row">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              ricoalentijo4@gmail.com
+            </a>
+            <a
+              href="https://instagram.com/ricoalentijo"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-row"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+              @ricoalentijo
+            </a>
+            <a
+              href="https://facebook.com/ricoalentijo"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-row"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                />
+              </svg>
+              Rico Alentijo
+            </a>
+            <div class="contact-row">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              Banaybanay, Davao Oriental, PH
+            </div>
+          </div>
+
+          <div class="footer-cta-right">
+            <a
+              href="mailto:ricoalentijo4@gmail.com"
+              class="btn-primary btn-large"
+              >Get in touch →</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-copy">© 2026 Rico Alentijo — built with care</div>
+        <div class="footer-socials">
+          <a href="#">Facebook</a>
+          <a href="#">GitHub</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">Email</a>
+        </div>
+      </footer>
     </div>
 
-    <section class="hero" id="hero">
-      <div class="hero-left">
-        <div class="availability-badge">
-          <div class="avail-dot"></div>
-          Available for freelance
-        </div>
-        <div class="hero-tag">Full-Stack Developer</div>
-        <h1 class="hero-h1">Building<br><span class="accent">digital</span><br>products.</h1>
-        <p class="hero-desc">I design and build fast, accessible web apps — from pixel-perfect UIs to scalable backends.
-          4 years crafting things people actually use.</p>
-        <div class="hero-actions">
-          <button class="btn-primary" id="view-work-btn">View my work</button>
-          <button class="btn-ghost">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path
-                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-            </svg>
-            GitHub
-          </button>
-        </div>
-      </div>
-      <div class="hero-right">
-        <div class="code-window">
-          <div class="code-titlebar">
-            <div class="dot dot-r"></div>
-            <div class="dot dot-y"></div>
-            <div class="dot dot-g"></div>
-            <span class="code-filename">portfolio.tsx</span>
-          </div>
-          <div class="code-body">
-            <div><span class="c-comment">// about me</span></div>
-            <div><span class="c-keyword">const </span><span class="c-var">developer</span><span class="c-white"> =
-                {</span></div>
-            <div>&nbsp;&nbsp;<span class="c-prop">name</span><span class="c-white">: </span><span class="c-string">"Rico
-                Alentijo"</span><span class="c-white">,</span></div>
-            <div>&nbsp;&nbsp;<span class="c-prop">role</span><span class="c-white">: </span><span
-                class="c-string">"Full-Stack Dev"</span><span class="c-white">,</span></div>
-            <div>&nbsp;&nbsp;<span class="c-prop">stack</span><span class="c-white">: [</span></div>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-string">"React"</span><span class="c-white">, </span><span
-                class="c-string">"Node.js"</span><span class="c-white">,</span></div>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-string">"TypeScript"</span><span class="c-white">, </span><span
-                class="c-string">"Supabase"</span></div>
-            <div>&nbsp;&nbsp;<span class="c-white">],</span></div>
-            <div>&nbsp;&nbsp;<span class="c-prop">available</span><span class="c-white">: </span><span
-                class="c-keyword">true</span><span class="c-white">,</span></div>
-            <div>&nbsp;&nbsp;<span class="c-prop">coffee</span><span class="c-white">: </span><span
-                class="c-string">"always"</span></div>
-            <div><span class="c-white">}</span></div>
-            <br>
-            <div><span class="c-fn">buildAmazingThings</span><span class="c-white">(developer)</span><span
-                class="cursor"></span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="stats-row">
-      <div class="stat-item">
-        <div class="stat-num">32<span>+</span></div>
-        <div class="stat-label">Projects shipped</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">2<span>yr</span></div>
-        <div class="stat-label">Experience</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">18<span>+</span></div>
-        <div class="stat-label">Happy clients</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">99<span>%</span></div>
-        <div class="stat-label">Lighthouse score</div>
-      </div>
-    </div>
-
-    <section class="section" id="work">
-      <div class="section-header">
-        <div>
-          <div class="section-eyebrow">// selected work</div>
-          <h2 class="section-title">Things I've built.</h2>
-        </div>
-        <a href="projects.html" class="view-all-link">View all projects →</a>
-      </div>
-
-      <div class="projects-grid" id="projects-grid"></div>
-    </section>
-
-    <section class="experience-section" id="experience">
-      <div class="section-eyebrow">// work history</div>
-      <h2 class="section-title">Where I've worked.</h2>
-      <p style="font-size:15px;color:#7A8A9A;line-height:1.7;max-width:480px;margin-top:0.5rem;">A timeline of the
-        roles, teams, and companies that shaped how I build things.</p>
-
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-meta">
-            <span class="timeline-date">Jan 2024 — Present</span>
-            <span class="timeline-sep">·</span>
-            <span class="timeline-location">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              Remote · Davao, PH
-            </span>
-          </div>
-          <div class="timeline-role">Senior Full-Stack Developer</div>
-          <div class="timeline-company">Freelance / Independent</div>
-          <div class="timeline-desc">Working independently with startups and scale-ups across Southeast Asia and the US,
-            delivering end-to-end web products — from architecture to deployment.</div>
-          <ul class="timeline-achievements">
-            <li>Built a real-time SaaS analytics dashboard handling 2M+ events/day for a Singapore-based startup</li>
-            <li>Shipped 8 client projects across e-commerce, FinTech, and EdTech verticals</li>
-            <li>Reduced average page load times by 60% through SSR, lazy loading, and CDN optimization</li>
-          </ul>
-          <div class="timeline-tags">
-            <span class="tag main">React</span>
-            <span class="tag main">Next.js</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">Vercel</span>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot past"></div>
-          <div class="timeline-meta">
-            <span class="timeline-date">Mar 2022 — Dec 2023</span>
-            <span class="timeline-sep">·</span>
-            <span class="timeline-location">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              Makati, PH · Hybrid
-            </span>
-          </div>
-          <div class="timeline-role">Full-Stack Developer</div>
-          <div class="timeline-company">Stackify Digital Solutions</div>
-          <div class="timeline-desc">Joined as the third engineering hire and helped scale the team to 12 engineers. Led
-            frontend architecture decisions and mentored two junior developers.</div>
-          <ul class="timeline-achievements">
-            <li>Architected a multi-tenant SaaS platform from scratch using React and Django REST Framework</li>
-            <li>Led migration from a monolith to microservices — cut deployment time from 45 min to under 8 min</li>
-            <li>Introduced component library and design system adopted across all products</li>
-          </ul>
-          <div class="timeline-tags">
-            <span class="tag main">TypeScript</span>
-            <span class="tag main">Python</span>
-            <span class="tag">Django</span>
-            <span class="tag">AWS</span>
-            <span class="tag">Docker</span>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot past"></div>
-          <div class="timeline-meta">
-            <span class="timeline-date">Jun 2021 — Feb 2022</span>
-            <span class="timeline-sep">·</span>
-            <span class="timeline-location">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              Cebu, PH · On-site
-            </span>
-          </div>
-          <div class="timeline-role">Junior Web Developer</div>
-          <div class="timeline-company">Bravo Creative Agency</div>
-          <div class="timeline-desc">First professional role out of university. Built marketing sites, landing pages,
-            and custom WordPress themes for local and regional brands.</div>
-          <ul class="timeline-achievements">
-            <li>Delivered 14 client websites in under 9 months across retail, hospitality, and NGO sectors</li>
-            <li>Introduced Git-based workflow to a team that was sharing code via email attachments</li>
-            <li>Built a reusable component library in vanilla JS that cut dev time by ~30%</li>
-          </ul>
-          <div class="timeline-tags">
-            <span class="tag main">JavaScript</span>
-            <span class="tag">PHP</span>
-            <span class="tag">WordPress</span>
-            <span class="tag">CSS / SCSS</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section skills-section" id="skills">
-      <div class="section-eyebrow">// skills & tools</div>
-      <h2 class="section-title">What I work with.</h2>
-      <div class="skills-grid">
-        <div class="skill-group">
-          <div class="skill-group-name">Frontend</div>
-          <div class="skill-item">
-            <div class="skill-dot active"></div>React / Next.js
-          </div>
-          <div class="skill-item">
-            <div class="skill-dot active"></div>TypeScript
-          </div>
-          <div class="skill-item">
-            <div class="skill-dot active"></div>Tailwind CSS
-          </div>
-          <div class="skill-item">
-            <div class="skill-dot active"></div>Flutter
-          </div>
-          <div class="skill-item">
-            <div class="skill-dot"></div>Vue.js
-          </div>
-        </div>
-        <div class="skill-group">
-          <div class="skill-group-name">Backend</div>
-          <div class="skill-item">
-            <div class="skill-dot active"></div>Node.js / Express
-          </div>
-          <div class="skill-item">
-            <div class="skill-dot active"></div>Python / FastAPI
-          </div>
-          <div class="skill-item">
-            <div class="skill-dot active"></div>REST & GraphQL
-          </div>
-          <div class="skill-item">
-            <div class="skill-dot"></div>Go
-          </div>
-          <div class="skill-item">
-            <div class="skill-dot"></div>PHP / Laravel
-          </div>
-        </div>
-        <div class="skill-group">
-          <div class="skill-group-name">Data & Cloud</div>
-          <div class="skill-item">
-            <div class="skill-dot active"></div>PostgreSQL
-          </div>
-          <div class="skill-item">
-            <div class="skill-dot active"></div>Firebase / Supabase
-          </div>
-          <div class="skill-item">
-            <div class="skill-dot active"></div>AWS / Vercel
-          </div>
-          <div class="skill-item">
-            <div class="skill-dot active"></div>Docker
-          </div>
-          <div class="skill-item">
-            <div class="skill-dot"></div>Redis
-          </div>
-        </div>
-        <div class="skill-group">
-          <div class="skill-group-name">Tools</div>
-          <div class="skill-item">
-            <div class="skill-dot active"></div>Git / GitHub
-          </div>
-          <div class="skill-item">
-            <div class="skill-dot active"></div>Figma
-          </div>
-          <div class="skill-item">
-            <div class="skill-dot active"></div>VS Code
-          </div>
-          <div class="skill-item">
-            <div class="skill-dot active"></div>CI/CD Pipelines
-          </div>
-          <div class="skill-item">
-            <div class="skill-dot"></div>Jira / Linear
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact-section" id="contact">
-      <div class="contact-content">
-        <div class="section-eyebrow">// contact</div>
-        <h2 class="section-title">Let's build something.</h2>
-        <p class="contact-desc">Have a project in mind? I'm currently open to freelance work and full-time roles. Feel
-          free to reach out via email or any of my social profiles.</p>
-      </div>
-
-      <div class="contact-cards">
-        <!-- Email Card -->
-        <a href="mailto:ricoalentijo4@gmail.com" class="contact-card">
-          <div class="contact-icon-wrapper">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-              <polyline points="22,6 12,13 2,6" />
-            </svg>
-          </div>
-          <div class="contact-platform">Email</div>
-          <div class="contact-value">ricoalentijo4@gmail.com</div>
-        </a>
-
-        <!-- Instagram Card -->
-        <a href="https://instagram.com/ricoalentijo" target="_blank" rel="noopener noreferrer" class="contact-card">
-          <div class="contact-icon-wrapper">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-            </svg>
-          </div>
-          <div class="contact-platform">Instagram</div>
-          <div class="contact-value">@ricoalentijo</div>
-        </a>
-
-        <!-- Facebook Card -->
-        <a href="https://facebook.com/ricoalentijo" target="_blank" rel="noopener noreferrer" class="contact-card">
-          <div class="contact-icon-wrapper">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-            </svg>
-          </div>
-          <div class="contact-platform">Facebook</div>
-          <div class="contact-value">Rico Alentijo</div>
-        </a>
-      </div>
-    </section>
-
-    <footer>
-      <div class="footer-copy">© 2026 — built with ♥ and too much coffee</div>
-      <div class="footer-socials">
-        <a href="#">GitHub</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">Twitter</a>
-        <a href="#">Dribbble</a>
-      </div>
-    </footer>
-  </div>
-
-  <script src="js/projects.js"></script>
-  <script src="js/project-utils.js"></script>
-  <script src="js/main.js"></script>
-</body>
-
+    <script src="js/projects.js"></script>
+    <script src="js/project-utils.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
