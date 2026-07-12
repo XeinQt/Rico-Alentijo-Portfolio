@@ -296,7 +296,7 @@ const PROJECTS = [
     liveUrl: "https://enrollment-system-mauve.vercel.app/",
     year: "2024",
     role: "Full-Stack Developer",
-    client: "Banayabanay Campus",
+    client: "John Mark Lumen",
     overview:
       "A client-commissioned enrollment management system built for Banayabanay Campus. The platform handles student login and authentication, enrollment processing, and student record management. Built using vanilla HTML, CSS, and JavaScript with no frameworks, the system was developed and deployed on Vercel for live access. This was a paid freelance project — the client, a school campus, needed a lightweight, easy-to-use digital enrollment solution.",
     responsibilities: [
@@ -318,7 +318,7 @@ const PROJECTS = [
       "img/enrollmentSystem/desktop-3.png",
       "img/enrollmentSystem/desktop-4.png",
       "img/enrollmentSystem/desktop-5.png",
-      "img/enrollmentSystem/desktop-6.png"
+      "img/enrollmentSystem/desktop-6.png",
     ],
   },
   {
@@ -352,7 +352,15 @@ const PROJECTS = [
       "Configured Vite as the asset bundler and deployed with optimized production build",
       "Managed database schema and migrations with Laravel Eloquent ORM",
     ],
-    techStack: ["Laravel", "PHP", "Tailwind CSS", "Vite", "MySQL", "Laravel Breeze", "Laravel Socialite"],
+    techStack: [
+      "Laravel",
+      "PHP",
+      "Tailwind CSS",
+      "Vite",
+      "MySQL",
+      "Laravel Breeze",
+      "Laravel Socialite",
+    ],
     figmaUrl: "",
     liveUrl: "",
     githubUrl: "https://github.com/XeinQt/eCommerce-for-Laptops",
