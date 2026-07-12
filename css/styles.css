@@ -1272,6 +1272,16 @@ footer {
   aspect-ratio: 9 / 19.5;
 }
 
+/* Tablet-view variant: landscape/portrait iPad screens */
+.gallery-grid.tablet-view {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.gallery-grid.tablet-view .gallery-item {
+  aspect-ratio: 3 / 4;
+}
+
+
 .gallery-item.featured {
   border-color: var(--accent);
 }
@@ -1872,4 +1882,17 @@ body.modal-open {
   html {
     scroll-behavior: auto;
   }
+}
+
+/* Warm background page styles for consistency */
+.pf.pf-warm {
+  background: var(--bg-warm);
+}
+
+.pf.pf-warm nav {
+  background: rgba(243, 237, 228, 0.88);
+}
+
+.pf.pf-warm .mobile-menu {
+  background: var(--bg-warm);
 }

@@ -106,24 +106,52 @@ function renderProjectDetail(project, container) {
     .join("");
 
   const featuredScreens = project.featuredScreens || [];
-  const galleryHtml = (project.galleryImages || [])
-    .map((src, i) => ({ src, i }))
-    .filter(({ i }) => i !== 0)
-    .map(
-      ({ src, i }) => `
-      <div class="gallery-item${featuredScreens.includes(i) ? " featured" : ""}">
-        <img src="${src}" alt="${project.name} screen ${i + 1}" loading="lazy" />
-      </div>`,
-    )
-    .join("");
 
-  const gallerySectionHtml = galleryHtml
-    ? `
+  // Helper to build a gallery section
+  function buildGallerySection(images, label, isMobileView, isTabletView) {
+    if (!images || images.length === 0) return "";
+    const itemsHtml = images
+      .map(
+        (src, i) => `
+      <div class="gallery-item${featuredScreens.includes(i) ? " featured" : ""}">
+        <img src="${src}" alt="${project.name} ${label} screen ${i + 1}" loading="lazy" />
+      </div>`,
+      )
+      .join("");
+    const gridClass = `gallery-grid${isMobileView ? " mobile-view" : ""}${isTabletView ? " tablet-view" : ""}`;
+    return `
+    <div class="detail-gallery">
+      <h3>${label}</h3>
+      <div class="${gridClass}">${itemsHtml}</div>
+    </div>`;
+  }
+
+  let gallerySectionHtml = "";
+  if (project.mobileGalleryImages || project.tabletGalleryImages) {
+    // Champion-style: separate mobile and tablet sections
+    gallerySectionHtml =
+      buildGallerySection(project.mobileGalleryImages, "Mobile Screens", true, false) +
+      buildGallerySection(project.tabletGalleryImages, "Tablet Screens", false, true);
+  } else {
+    // Standard: single gallery skipping index 0 (the hero/banner image)
+    const images = (project.galleryImages || []).filter((_, i) => i !== 0);
+    if (images.length > 0) {
+      const itemsHtml = images
+        .map(
+          (src, i) => `
+      <div class="gallery-item${featuredScreens.includes(i + 1) ? " featured" : ""}">
+        <img src="${src}" alt="${project.name} screen ${i + 2}" loading="lazy" />
+      </div>`,
+        )
+        .join("");
+      gallerySectionHtml = `
     <div class="detail-gallery">
       <h3>Gallery</h3>
-      <div class="gallery-grid${project.isMobile ? " mobile-view" : ""}">${galleryHtml}</div>
-    </div>`
-    : "";
+      <div class="gallery-grid${project.isMobile ? " mobile-view" : ""}">${itemsHtml}</div>
+    </div>`;
+    }
+  }
+
 
   container.innerHTML = `
     <div class="detail-hero${project.image ? "" : " has-placeholder"}" style="${project.imgStyle}">${heroContent}</div>
