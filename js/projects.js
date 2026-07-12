@@ -111,7 +111,7 @@ const PROJECTS = [
       "A Figma-designed mobile app for Champion — a refer-and-earn platform where users invite friends, track referrals, and earn real money rewards.",
     linkText: "View project →",
     year: "2025",
-    role: "UI/UX Designer",
+    role: "Assistant UI/UX Designer",
     client: "Howard Green",
     overview:
       "Champion is a Figma UI/UX design for a referral-based earnings app. Users sign up, refer friends via a unique link, and earn money for every successful referral. The design covers the full user journey — from onboarding and sign-in through the dashboard, referral tracking, contest participation, and payout management. Both mobile and tablet breakpoints were designed, giving the app a consistent, bold experience across devices.",
@@ -170,7 +170,7 @@ const PROJECTS = [
       "A sleek Figma-designed platform to create, customize, and share digital business cards instantly, simplifying professional networking.",
     linkText: "View project →",
     year: "2025",
-    role: "UI/UX Designer",
+    role: "Assistant UI/UX Designer",
     client: "Howard Green",
     overview:
       "BizCard is a comprehensive Figma UI/UX design for a digital business card and contact management platform. The application allows users to build a personalized digital identity card, customize design layouts, colors and details, and share it instantly via QR code, link, or direct contact. The project designs both mobile and tablet interfaces, offering a seamless and modern transition of key dashboard stats, style customizations, and contact connections across screens.",
@@ -294,7 +294,7 @@ const PROJECTS = [
       "A fully functional student enrollment and management system for Banayabanay Campus — built with vanilla HTML, CSS, and JavaScript and deployed live on Vercel.",
     linkText: "View live site →",
     liveUrl: "https://enrollment-system-mauve.vercel.app/",
-    year: "2025",
+    year: "2024",
     role: "Full-Stack Developer",
     client: "Banayabanay Campus",
     overview:
